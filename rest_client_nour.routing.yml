@@ -1,0 +1,15 @@
+rest_client_nour.hello:
+  path: '/hellio'
+  defaults:
+    _controller: '\Drupal\rest_client_nour\Controller\HelloController::content'
+    _title: 'Hello World'
+  requirements:
+    _permission: 'access content'
+    
+rest_client_nour.login:
+  path: '/loginjava'
+  defaults:
+    _form: '\Drupal\rest_client_nour\Form\SimpleForm'
+    _title: 'log into java'
+  requirements:
+    _permission: 'access content'

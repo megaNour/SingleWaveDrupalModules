@@ -1,0 +1,9 @@
+type: rest_client_nour_url
+name: url
+description: "the url of a restfull resource"
+help: ""
+new_revision: false
+display_submitted: true
+preview_mode: 1
+status: true
+langcode: en
