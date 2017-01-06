@@ -59,5 +59,35 @@
       }
     }
 
+    public function upload($login, $folder, $files) {
+      $result = false;
+      $client = new Client();
+      $url = $this->siteUrl . "/upload";
+      $multipart = $this->createMultipartBody($login, $folder, $files);
+      try {
+        $response = $client->request('POST', $url, $multipart);
+        return $response->getBody();
+      } catch (Exception $ex) {
+        return($this->t("Error: " . e));
+      }
+    }
+
+    public function createMultipartBody($login, $folder, $files) {
+      $multipart = [
+            'multipart' => [
+              [
+                'login' => $login,
+                'folder' => $folder
+              ],
+            ]
+      ];
+      
+      $chunks = array_chunk($files, 1);
+      foreach ($chunks as $file) {
+        var_dump($file);
+      }
+      die;
+    }
+
   }
   
